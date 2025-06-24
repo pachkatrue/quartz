@@ -7,12 +7,14 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible", // или "google" если нужен
+      provider: "plausible",
     },
-    baseUrl: "https://pachkatrue.github.io/quartz/",
+    baseUrl: "pachkatrue.github.io/quartz", 
     ignorePatterns: ["private", "drafts", "templates"],
     defaultDateType: "created",
     theme: {
+      fontOrigin: "googleFonts", 
+      cdnCaching: true,         
       typography: {
         header: "Schibsted Grotesk",
         body: "Source Sans Pro",
@@ -57,7 +59,7 @@ const config: QuartzConfig = {
       }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.CrawlLinks({ 
-        markdownLinkResolution: "absolute",
+        markdownLinkResolution: "shortest", 
         prettyLinks: true,
         openLinksInNewTab: false,
         lazyLoad: true,
@@ -67,8 +69,6 @@ const config: QuartzConfig = {
     ],
     filters: [
       Plugin.RemoveDrafts(),
-      // Только публичные заметки (опционально)
-      Plugin.ExplicitPublish(),
     ],
     emitters: [
       Plugin.AliasRedirects(),
