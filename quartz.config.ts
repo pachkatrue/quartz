@@ -9,7 +9,7 @@ const config: QuartzConfig = {
     analytics: {
       provider: "plausible", // или "google" если нужен
     },
-    baseUrl: "",
+    baseUrl: "https://pachkatrue.github.io/quartz/",
     ignorePatterns: ["private", "drafts", "templates"],
     defaultDateType: "created",
     theme: {
