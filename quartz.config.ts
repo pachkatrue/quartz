@@ -51,9 +51,18 @@ const config: QuartzConfig = {
       }),
       Plugin.Latex({ renderEngine: "katex" }),
       Plugin.SyntaxHighlighting(),
-      Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
+      Plugin.ObsidianFlavoredMarkdown({ 
+        enableInHtmlEmbed: false,
+        parseBlockReferences: true 
+      }),
       Plugin.GitHubFlavoredMarkdown(),
-      Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
+      Plugin.CrawlLinks({ 
+        markdownLinkResolution: "absolute",
+        prettyLinks: true,
+        openLinksInNewTab: false,
+        lazyLoad: true,
+        externalLinkIcon: true
+      }),
       Plugin.Description(),
     ],
     filters: [
