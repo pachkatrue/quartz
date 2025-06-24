@@ -9,7 +9,7 @@ const config: QuartzConfig = {
     analytics: {
       provider: "plausible", // или "google" если нужен
     },
-    baseUrl: "quartz",
+    baseUrl: "",
     ignorePatterns: ["private", "drafts", "templates"],
     defaultDateType: "created",
     theme: {
